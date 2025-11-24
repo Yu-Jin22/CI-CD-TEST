@@ -52,7 +52,7 @@ jobs:
           echo "===== START ====="
           echo "${{ secrets.SSH_PRIVATE_KEY }}"
           echo "===== END ====="
-          mdir -p ~/.ssh
+          mkdir -p ~/.ssh
           cat << 'EOF' > ~/.ssh/id_rsa
           ${{ secrets.SSH_PRIVATE_KEY }}
           EOF
