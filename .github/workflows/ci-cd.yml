@@ -49,7 +49,10 @@ jobs:
     steps:
       - name: Prepare SSH Key
         run: |
-          mkdir -p ~/.ssh
+          echo "===== START ====="
+          echo "${{ secrets.SSH_PRIVATE_KEY }}"
+          echo "===== END ====="
+          mdir -p ~/.ssh
           cat << 'EOF' > ~/.ssh/id_rsa
           ${{ secrets.SSH_PRIVATE_KEY }}
           EOF
